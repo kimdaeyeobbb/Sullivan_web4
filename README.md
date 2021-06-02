@@ -1,2 +1,2 @@
 # Sullivan_web4
-web4 team for fornt-end
+web4 team for front-end
