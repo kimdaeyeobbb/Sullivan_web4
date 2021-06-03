@@ -21,8 +21,9 @@
               for(let i=0; i< yourData.length; i++){
                   let rowInfo = yourData[i];
 
-                  let rowDiv = document.createElement('div');
-                  rowDiv.classList.add('Info-row');
+                  let newrowInfo = document.createElement('div');
+                  newrowInfo.classList.add('Info-row');
+
                   let rowName = document.createElement('p')
                   let rowNameNode = document.createTextNode(rowInfo["full_name"])
                   rowName.appendChild(rowNameNode)
@@ -43,18 +44,18 @@
                   rowMessage.appendChild(rowMessageNode)
                   rowMessage.classList.add("message")
 
-                  rowDiv.appendChild(rowName);
-                  rowDiv.appendChild(rowMail);
-                  rowDiv.appendChild(rowAge);
-                  rowDiv.appendChild(rowMessage);
+                  rowInfo.appendChild(rowName)
+                  rowInfo.appendChild(rowMail)
+                  rowInfo.appendChild(rowAge)
+                  rowInfo.appendChild(rowMessage)
 
-                  l.appendChild(rowDiv)
+                  l.appendChild(newrowInfo)
                   
               }
             }).catch(err => console.log(err))
           }
           else{
-            alert('Something Wrong');
+            alert('Something Wrong')
           }
         })
       }
