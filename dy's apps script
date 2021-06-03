@@ -1,1 +1,47 @@
 
+function doGet(e) {
+  Logger.log(e);
+  //console.log();
+  Logger.log(e.parameter);
+  if(e.parameter.page == 'index'){
+    return HtmlService.createTemplateFromFile('index').evaluate();
+  } else if(e.parameter.page == 'blog'){
+    return HtmlService.createTemplateFromFile('blog').evaluate();
+  } else if(e.parameter.page == 'guestbook'){
+    return HtmlService.createTemplateFromFile('guestbook').evaluate();
+  } else if(e.parameter.page == 'contact'){
+    return HtmlService.createTemplateFromFile('contact').evaluate();
+  } else{
+    return HtmlService.createTemplateFromFile('index').evaluate();
+  }
+    
+}
+
+function writeData(contents){
+  const url = 'https://docs.google.com/spreadsheets/d/1Td8Z6dxYFju11IFnjfA8ryl6iT4O7lm4SEScsszQHmg/edit#gid=0';
+  const ss = SpreadsheetApp.openByUrl(url);
+  const ws = ss.getSheetByName('data');
+
+  //Logger.log(title, content);
+  ws.appendRow([contents.title, contents.content, new Date(), contents.section, contents.writer]);
+}
+
+function loadData(){
+    const url = 'https://docs.google.com/spreadsheets/d/1Td8Z6dxYFju11IFnjfA8ryl6iT4O7lm4SEScsszQHmg/edit#gid=0';
+    const ss = SpreadsheetApp.openByUrl(url);
+    const ws = ss.getSheetByName('data');           // 엑셀상 data시트 가져옴
+  
+    let data = ws.getRange(1, 1, ws.getLastRow(), 5).getValues();
+    console.log(data);
+  
+    returnData = [];
+    for (let index = 0; index < data.length; index++){
+        returnData.push(data[index][0], data[index][1], String(data[index][2]), data[index][3], data[index][4]);
+    } 
+
+    return returnData;
+  }
+
+function include(filename){
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
+}
