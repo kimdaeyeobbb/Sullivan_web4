@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <base target="_top">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <?!= include('customCSS'); ?>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="<?= ScriptApp.getService().getUrl() ?>?page=index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= ScriptApp.getService().getUrl() ?>?page=blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= ScriptApp.getService().getUrl() ?>?page=contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= ScriptApp.getService().getUrl() ?>?page=guestbook">guestbook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+       
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('http://gdurl.com/IQh8')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>방명록</h1>
+                            <span class="subheading">해당 홈페이지의 방명록에 원하는 글을 남겨주세요</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+            <div class="row">
+              <div class = "col-xl-7">
+                <div class = "input-group mb-3">
+                  <span class="input-group-text" id="basic-addon0">작성자</span>
+                    <input type="text" id="writer" class="form-control" placeholder="Wrtiername" aria-label="Wrtiername" aria-describedby="basic=addon0">
+                  <span class="input-group-text" id="basic-addon1">제목</span>
+                      <input type="text" id="title" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                      
+                    </div>
+                <div class="col-lg-12">
+                  <div class="input-group">
+                            <span class="input-group-text">내용</span>
+                            <textarea id="content" input type="text" id="content" class="form-control" placeholder="Content" aria-label="Username"></textarea>
+                      </div>
+                  <image src = "2017042000056_0.jpg" style="float: right; width:100px; height:100px;">    
+                    <br>
+                    <label for="section">분류</label>
+                    <select id="section" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option value="open">공개글</option>
+                        <option value="secret">비밀글</option>
+                    </select>
+
+                    <div class="d-grid gap-2">
+                        <button id="guestbook" class="btn btn-primary" type="button">작성</button>
+                    </div>
+
+              
+
+
+                </div>
+            </div>
+        </div>
+        <hr />
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <?!= include('customJS'); ?>
+        <script>
+            document.getElementById('guestbook').addEventListener('click', googleSheetWrite);
+
+            function googleSheetWrite(){
+                let contents = {};
+
+                contents.writer = document.getElementById('writer').value;
+                contents.title = document.getElementById('title').value;
+                contents.content = document.getElementById('content').value;
+                contents.section = document.getElementById('section').value;
+                
+
+                //console.log(contents);
+
+                google.script.run.writeData(contents);
+
+                documtet.getElementById('writer').value = '';
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+                document.getElementById('section').value = '';
+
+            }
+        </script>
+    </body>
+</html>
