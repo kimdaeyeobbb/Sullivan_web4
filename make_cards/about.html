@@ -48,14 +48,9 @@
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
-                <div id="text" class="row gx-4 gx-lg-5 justify-content-center">
-                    <!-- <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
-                    </div> -->
-                    <button onclick="getForm()">방명록보기</button>
-                </div>
+                    <div id="text" class="row gx-4 gx-lg-5 justify-content-center" style="text-align: center;">
+                        <button class="btn btn-primary" onclick="getForm()">방명록보기</button>
+                    </div>
             </div>
         </main>
         <!-- Footer-->
@@ -114,11 +109,8 @@
                         <div class="post-preview">
                             <h2 class="post-title">${yourData[i]["title"]}</h2>
                             <h3 class="post-subtitle">${yourData[i]["content"]}</h3>
-                            <p class="post-meta">
-                                Posted by
-                                <a href="#!">${yourData[i]["writer"]}</a>
-                                <p>${yourData[i]["section"]}</p>
-                            </p>
+                            <p class="post-meta">Posted by ${yourData[i]["writer"]}
+                            ${yourData[i]["section"]}</p>
                         </div>
                         <hr class="my-4" />
                         `;
